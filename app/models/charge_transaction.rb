@@ -1,0 +1,3 @@
+class ChargeTransaction < Transaction
+  
+end
