@@ -43,7 +43,6 @@ class MerchantsController < ApplicationController
   end
 
   def find_merchant
-    debugger
     @merchant = Merchant.find(params[:id])
 
   rescue ActiveRecord::RecordNotFound
