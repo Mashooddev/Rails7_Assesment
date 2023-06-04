@@ -18,7 +18,10 @@ class TransactionsController < ApplicationController
   def show; end
   
   def update
-    @transaction.update(transaction_params)
+    type = params["transaction"][:type]
+
+    UpdateTransaction.call(@transaction, type, transaction_params)
+    TransferAmount.call(type, @merchant, @transaction)
 
   rescue StandardError => e
     render json: {error: true, msg: e.message}
@@ -54,6 +57,6 @@ class TransactionsController < ApplicationController
     @transaction = @merchant.transactions.find(params[:id])
 
   rescue ActiveRecord::RecordNotFound
-    render json: {error: true, msg: "Merchant not found"}
+    render json: {error: true, msg: "Transaction not found"}
   end
 end
