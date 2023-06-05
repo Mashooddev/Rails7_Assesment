@@ -9,7 +9,7 @@ development:
   <<: *default
   host: localhost
   username: postgres
-  password: postgres
+  password: 12345
   database: Rails7_Demo_development
 
   # The specified database role being used to connect to postgres.

@@ -40,6 +40,10 @@ gem "bootsnap", require: false
 # gem "rack-cors"
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'rspec-rails','5.0.1'
+  gem 'faker'
+  gem 'shoulda-matchers', require: false
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
